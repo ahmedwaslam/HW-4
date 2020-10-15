@@ -1,4 +1,8 @@
 # HW-4
+Antonio Sosa, Mirajul Fahim & Ahmed Aslam
+
+Lab 4
+```
 > load("/cloud/project/acs2017_ny_data.RData")
 > attach(acs2017_ny)
 
@@ -45,10 +49,12 @@ F-statistic:  2289 on 11 and 163146 DF,  p-value: < 2.2e-16
 > plot(model_temp1
 + )
 
+`````
+
 Please see attached Linear Regression Plot
 
 Stargazer Model
-
+````
 > require(stargazer)
 > stargazer(model_temp1, type = "text")
 
@@ -102,28 +108,35 @@ F Statistic         2,289.331*** (df = 11; 163146)
 ==================================================
 Note:                  *p<0.1; **p<0.05; ***p<0.01
 
-
-Linear Regression Plot without Y Limitations (please see attached)
+`````
+Linear Regression Plot without Y Limitations (please see attached) 
 
 The Linear Regression Plot is highly skewed to the bottom portion of the graph , the reason for this is because we have not created a Y Limitation in our code.
 
-Linear Regression Plot with Y Limitations (please see attached)
+Linear Regression Plot with Y Limitations (please see attached) 
 
-The Linear Regression Plot with Y Limitations shows income values relative to age evenly spaced out.
+The Linear Regression Plot with Y Limitations shows income values relative to age evenly spaced out. 
+
+````
 
 > plot(INCWAGE ~ jitter(AGE, factor = 2), pch = 16, col = rgb(0.5, 0.5, 0.5, alpha = 0.2), ylim = c(0,150000), data = dat_graph)
 > to_be_predicted2 <- data.frame(AGE = 25:55, female = 1, AfAm = 0, Asian = 0, Amindian = 1, race_oth = 1, Hispanic = 1, educ_hs = 0, educ_somecoll = 0, educ_college = 1, educ_advdeg = 0)
 
-Linear Regression Plot with Income and Age- Please see attached
+````
+Linear Regression Plot with Income and Age- Please see attached 
 
-Our Linear Regression Line shows a slightly negative sloping line hovering at around 49,000 at age 25 and decreasing to 45,000 dollars per year at around 55 years age . The ACS 2017 data looks at respondents from the entire new york state, which was surprising to find out that the median average income of 25 year olds in the data set was less than the national average which is 50,000. I believe that the population of respondents in the ACS dataset has skewed our regression to a lower income. It seems a typical respondent who answers the Census is probably somone who is older and as a result might be retired and making less than the national average.
+Our Linear Regression Line shows a slightly negative sloping line hovering at around 49,000 at age 25 and decreasing to 45,000 dollars per year at around 55 years age . The ACS 2017 data looks at respondents from the entire new york state, which was surprising to find out that the median average income of 25 year olds in the data set was less than the national average which is 50,000. I believe that the population of respondents in the ACS dataset has skewed our regression to a lower income. It seems a typical respondent who answers the Census is probably somone who is older and as a result might be retired and making less than the national average. 
 
 Homework 4:
 
-For our Homwork we wanted to address the effects of gentrification in lower income neighborhoods particulary in NYCHA and then compare the data from the ACS 2017 values to see if their were any potential correlations. We referred to the article "Linking Residents to Opportuntity, Gentrification In Housing" by Samuel Dastrup and Ingrid Gould Ellen.
+For our Homwork we wanted to address the effects of gentrification in lower income neighborhoods particulary in NYCHA and then compare the data from the ACS 2017 values to see if their were any potential correlations. We referred to the article "Linking Residents to Opportuntity, Gentrification In Housing" by Samuel Dastrup and Ingrid Gould Ellen. 
 
-In the article the author created a data set defining housing income in NYCHA communities as low, increasing and high. Low was defined as 19,500 Increasing was defined as 20,698 High was defined as 21,648
+In the article the author created a data set defining housing income in NYCHA communities as low, increasing and high.
+Low was defined as 19,500
+Increasing was defined as 20,698
+High was defined as 21,648
 
+`````
 
 > load("/cloud/project/acs2017_ny_data.RData")
 > attach(acs2017_ny)
@@ -181,15 +194,21 @@ F-statistic:  1941 on 12 and 185942 DF,  p-value: < 2.2e-16
 
 ````
 To Keep in line with the orginal data set we used Household Income and added Family Size to the data set. 
+`````
 
-In the JSTOR aricle on Page 16 the linear regression model identified that AGE as well as Years in NYCHA were major factors that contributed to defining income characteristics of NYCHA households. In the article AGE had a standard coefficent of 47 and Years living in NYCHA had a coeffcient of 13. Compared to our dataset variables that had the largest negative effect on income were ethnicity and gender. The values that had the largest postive effect on income were Education. When comparing the coefficients such as AGE and Family Size, AGE had a negative coeficient of -222 and Family Size had a positive 77.
+In the JSTOR aricle on Page 16 the linear regression model identified that AGE as well as Years in NYCHA were major factors that contributed to defining income characteristics of NYCHA households. In the article AGE had a standard coefficent of 47 and Years living in NYCHA had a coeffcient of 13.   Compared to our dataset variables that had the largest negative effect on income were ethnicity and  gender. The values that had the largest postive effect on income were Education. When comparing the coefficients such as AGE and Family Size, AGE had a negative coeficient of -222 and Family Size had a positive 77.
 
-Please note that since the Census Data that we are using does not have "Years Living in NYCHA" as a data set we intend to use FAMSIZE and establish an Income Contraint in our model to create a similar data eniovrnment in the article. We believe that by establishing a relatively low income limitation on House Income we can compare the census data to the NYCHA data. With the incredibly high cost of living in new york city we could possibly see a trend between our model and the model in the article
+Please note that since the Census Data that we are using does not have "Years Living in NYCHA" as a data set we intend to use FAMSIZE and establish an Income Contraint in our model to create a similar data eniovrnment in the article. We believe that by establishing a relatively low income limitation on House Income we can  compare the census data to the NYCHA data. With the incredibly high cost of living in new york city we could possibly see a trend between our model and the model in the article
 
-JSTOR Article
 
-MLA Citation: Dastrup, Samuel, and Ingrid Gould Ellen. “Linking Residents to Opportunity: Gentrification and Public Housing.” Cityscape, vol. 18, no. 3, 2016, pp. 87–108. JSTOR, www.jstor.org/stable/26328274. Accessed 15 Oct. 2020.
+[JSTOR Article](https://www-jstor-org.ccny-proxy1.libr.ccny.cuny.edu/stable/pdf/26328274.pdf?ab_segments=0%252Fbasic_search_SYC-5462%252Ftest&refreqid=excelsior%3A3df675c39d7997c6fdfbf151b566c4d5)
 
+MLA Citation:
+Dastrup, Samuel, and Ingrid Gould Ellen. “Linking Residents to Opportunity: Gentrification and Public Housing.” Cityscape, vol. 18, no. 3, 2016, pp. 87–108. JSTOR, www.jstor.org/stable/26328274. Accessed 15 Oct. 2020.
+
+Page 16 
+
+````
 Our StarGzaer Model adding Family Size and Income Constraints to replicate the JSTOR Linear Regression Model found on Page 16
 
 
@@ -248,8 +267,10 @@ F Statistic         1,940.914*** (df = 12; 185942)
 ==================================================
 Note:                  *p<0.1; **p<0.05; ***p<0.01
 
-
+`````
 Code for Graphing Regression Lines for Women and Men taking into account family size, education and ethincity.
+
+````
 
 > attach(acs2017_ny)
 > Respondents <- length(HHINCOME)
@@ -274,4 +295,7 @@ Code for Graphing Regression Lines for Women and Men taking into account family 
 > to_be_predicted2$yhat <- predict(model_temp1, newdata = to_be_predicted2)
 > lines(yhat ~ AGE, data = to_be_predicted2
 
-After Creating both regression plots for Men and Women at the 0-30,000 dollar range we discovered that the the regression were proptionally higher for Women Compared to Men. The range from 20,000 - 30,0000 dollars had a higher population density for female respondents compared to male respondents. Another intresting find was that at the 15,000 dollar income level for men was higher in population density compared to women. When looking at our data relative to the JSTOR regression model more participants in NYCHA housing had an overall salary of about 19,000 a year in our model more respondents had higher incomes of 25,000 to 30,000 thousand dollars a year for a Family size greater than 3. We can conclude from the ACS data set that many of our participants who are at the 0 to 30,000 income range come from all areas of new york state. Breaking down the data further it seems that the population density at 20,000 to 30,000 dollar income is more densely populated with women rather than men. Also the ACS data would not be a good resource to look at housing characteristics in NYCHA communities.
+````
+
+
+After Creating both regression plots for Men and Women at the 0-30,000 dollar range we discovered that the the regression were proptionally higher  for Women Compared to Men. The range from 20,000 - 30,0000 dollars had a higher population density for female respondents compared to male respondents. Another intresting find was that at the 15,000 dollar income level for men was higher in population density compared to women. When looking at our data relative to the JSTOR regression model more participants in NYCHA housing had an overall salary of about 19,000 a year in our model more respondents had higher incomes of 25,000 to 30,000 thousand dollars a year for a Family size greater than 3.  We can conclude from the ACS data set that many of our participants who are at the 0 to 30,000 income range come from all areas of new york state. Breaking down the data further it seems that the population density at 20,000 to 30,000 dollar income is more densely populated with women rather than men. Also the ACS data would not be a good resource to look at housing characteristics in NYCHA communities.
